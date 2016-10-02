@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using Edi.ExtensionMethods;
 
 namespace SqlToJson
 {
@@ -79,6 +82,37 @@ namespace SqlToJson
         }
 
         #endregion
+
+        public Response<List<string>> GetDatabaseList()
+        {
+            try
+            {
+                var reader = GetReader("EXEC sp_databases");
+                using (reader)
+                {
+                    var dt = new DataTable();
+                    dt.Load(reader);
+
+                    var query = from q in dt.AsEnumerable()
+                                select q.Field<string>("DATABASE_NAME");
+
+                    return new Response<List<string>>()
+                    {
+                        IsSuccess = true,
+                        Item = query.ToList()
+                    };
+                }
+            }
+            catch (Exception e)
+            {
+                return new Response<List<string>>()
+                {
+                    IsSuccess = false,
+                    Item = new List<string>(),
+                    Message = e.Message
+                };
+            }
+        }
 
         public Response<string> SqlToJson(string sql)
         {

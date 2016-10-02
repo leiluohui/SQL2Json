@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +14,15 @@ namespace SqlToJson
 {
     public partial class MainForm : Form
     {
+        public Operator SqlOperator { get; set; }
+
         public MainForm()
         {
             InitializeComponent();
+
+            txtSQL.Enabled = false;
+            txtResult.Enabled = false;
+            cmbDatabaseList.Enabled = false;
         }
 
         private void cbWindowsAuth_CheckedChanged(object sender, EventArgs e)
@@ -41,14 +48,25 @@ namespace SqlToJson
         {
             try
             {
-                ValidateNullOrEmptyOrWhiteSpace(new[] { txtServer.Text, txtDatabase.Text });
+                ValidateNullOrEmptyOrWhiteSpace(new[] { txtServer.Text });
 
                 var response = await Operator.TestConnection(txtServer.Text, txtUsername.Text, txtPassword.Text,
-                                                  initDb: txtDatabase.Text,
+                                                  initDb: cmbDatabaseList.SelectedText,
                                                   useWindowsAuth: cbWindowsAuth.Checked);
 
                 MessageBox.Show(response.IsSuccess ? "OK" : response.Message, "Test Connection", MessageBoxButtons.OK,
                     response.IsSuccess ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+
+                if (response.IsSuccess)
+                {
+                    txtSQL.Enabled = true;
+                    txtResult.Enabled = true;
+                    cmbDatabaseList.Enabled = true;
+
+                    SqlOperator = new Operator(txtServer.Text, txtUsername.Text, txtPassword.Text, string.Empty, useWindowsAuth: cbWindowsAuth.Checked);
+
+                    LoadDatabaseList();
+                }
             }
             catch (Exception ex)
             {
@@ -56,13 +74,18 @@ namespace SqlToJson
             }
         }
 
+        private void LoadDatabaseList()
+        {
+            var response = SqlOperator.GetDatabaseList();
+            if (response.IsSuccess)
+            {
+                cmbDatabaseList.DataSource = response.Item;
+            }
+        }
+
         private void btnGetJSON_Click(object sender, EventArgs e)
         {
-            var opt = new Operator(txtServer.Text, txtUsername.Text, txtPassword.Text,
-                initDb: txtDatabase.Text,
-                useWindowsAuth: cbWindowsAuth.Checked);
-
-            var response = opt.SqlToJson(txtSQL.Text);
+            var response = SqlOperator.SqlToJson(txtSQL.Text);
 
             if (response.IsSuccess)
             {
@@ -77,6 +100,16 @@ namespace SqlToJson
         private void btnCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtResult.Text);
+        }
+
+        private void lblEdiWang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbDatabaseList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlOperator = new Operator(txtServer.Text, txtUsername.Text, txtPassword.Text, initDb: (string)cmbDatabaseList.SelectedValue, useWindowsAuth: cbWindowsAuth.Checked);
         }
     }
 }

@@ -32,7 +32,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDatabase = new System.Windows.Forms.TextBox();
+            this.cmbDatabaseList = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnTestConn = new System.Windows.Forms.Button();
             this.cbWindowsAuth = new System.Windows.Forms.CheckBox();
@@ -44,7 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnGetJSON = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblEdiWang = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtDatabase);
+            this.groupBox1.Controls.Add(this.cmbDatabaseList);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnTestConn);
             this.groupBox1.Controls.Add(this.cbWindowsAuth);
@@ -89,13 +89,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SQL Server Configuration";
             // 
-            // txtDatabase
+            // cmbDatabaseList
             // 
-            this.txtDatabase.Location = new System.Drawing.Point(66, 79);
-            this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.Size = new System.Drawing.Size(271, 20);
-            this.txtDatabase.TabIndex = 10;
-            this.txtDatabase.Text = "master";
+            this.cmbDatabaseList.FormattingEnabled = true;
+            this.cmbDatabaseList.Location = new System.Drawing.Point(66, 79);
+            this.cmbDatabaseList.Name = "cmbDatabaseList";
+            this.cmbDatabaseList.Size = new System.Drawing.Size(271, 21);
+            this.cmbDatabaseList.TabIndex = 11;
+            this.cmbDatabaseList.SelectedIndexChanged += new System.EventHandler(this.cmbDatabaseList_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -110,7 +111,7 @@
             // 
             this.btnTestConn.Location = new System.Drawing.Point(541, 17);
             this.btnTestConn.Name = "btnTestConn";
-            this.btnTestConn.Size = new System.Drawing.Size(98, 51);
+            this.btnTestConn.Size = new System.Drawing.Size(98, 52);
             this.btnTestConn.TabIndex = 6;
             this.btnTestConn.Text = "Test Connection";
             this.btnTestConn.UseVisualStyleBackColor = true;
@@ -156,6 +157,9 @@
             // 
             // txtResult
             // 
+            this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResult.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResult.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtResult.Location = new System.Drawing.Point(12, 212);
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(646, 263);
@@ -200,21 +204,22 @@
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
-            // label6
+            // lblEdiWang
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(584, 491);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "by Edi.Wang";
+            this.lblEdiWang.AutoSize = true;
+            this.lblEdiWang.Location = new System.Drawing.Point(584, 491);
+            this.lblEdiWang.Name = "lblEdiWang";
+            this.lblEdiWang.Size = new System.Drawing.Size(68, 13);
+            this.lblEdiWang.TabIndex = 9;
+            this.lblEdiWang.Text = "by Edi.Wang";
+            this.lblEdiWang.Click += new System.EventHandler(this.lblEdiWang_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 523);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblEdiWang);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnGetJSON);
             this.Controls.Add(this.label5);
@@ -249,8 +254,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnGetJSON;
         private System.Windows.Forms.Button btnCopy;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtDatabase;
+        private System.Windows.Forms.Label lblEdiWang;
+        private System.Windows.Forms.ComboBox cmbDatabaseList;
     }
 }
 
