@@ -1,20 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlToJson", "SqlToJson\SqlToJson.csproj", "{CB35AE61-A7F3-46C8-AA1E-0A7E94D3DE8A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Sql2JsonSetup", "Sql2JsonSetup\Sql2JsonSetup.vdproj", "{0A02CFED-C795-4376-A782-DB6BC10E3696}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://ediwang.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SqlToJson\\SqlToJson.csproj
-		SccProjectName1 = SqlToJson
-		SccLocalPath1 = SqlToJson
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -24,6 +17,8 @@ Global
 		{CB35AE61-A7F3-46C8-AA1E-0A7E94D3DE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB35AE61-A7F3-46C8-AA1E-0A7E94D3DE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB35AE61-A7F3-46C8-AA1E-0A7E94D3DE8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A02CFED-C795-4376-A782-DB6BC10E3696}.Debug|Any CPU.ActiveCfg = Debug
+		{0A02CFED-C795-4376-A782-DB6BC10E3696}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
