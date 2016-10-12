@@ -44,30 +44,34 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnGetJSON = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
-            this.lblEdiWang = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtServer
             // 
-            this.txtServer.Location = new System.Drawing.Point(66, 20);
+            this.txtServer.Location = new System.Drawing.Point(88, 25);
+            this.txtServer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(469, 20);
+            this.txtServer.Size = new System.Drawing.Size(624, 22);
             this.txtServer.TabIndex = 0;
             this.txtServer.Text = "(local)";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(66, 49);
+            this.txtUsername.Enabled = false;
+            this.txtUsername.Location = new System.Drawing.Point(88, 60);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.Size = new System.Drawing.Size(132, 22);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(237, 49);
+            this.txtPassword.Enabled = false;
+            this.txtPassword.Location = new System.Drawing.Point(316, 60);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(132, 22);
             this.txtPassword.TabIndex = 2;
             // 
             // groupBox1
@@ -82,9 +86,11 @@
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtServer);
             this.groupBox1.Controls.Add(this.txtUsername);
-            this.groupBox1.Location = new System.Drawing.Point(13, 14);
+            this.groupBox1.Location = new System.Drawing.Point(17, 17);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(645, 114);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(860, 140);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SQL Server Configuration";
@@ -92,26 +98,29 @@
             // cmbDatabaseList
             // 
             this.cmbDatabaseList.FormattingEnabled = true;
-            this.cmbDatabaseList.Location = new System.Drawing.Point(66, 79);
+            this.cmbDatabaseList.Location = new System.Drawing.Point(88, 97);
+            this.cmbDatabaseList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbDatabaseList.Name = "cmbDatabaseList";
-            this.cmbDatabaseList.Size = new System.Drawing.Size(271, 21);
+            this.cmbDatabaseList.Size = new System.Drawing.Size(360, 24);
             this.cmbDatabaseList.TabIndex = 11;
             this.cmbDatabaseList.SelectedIndexChanged += new System.EventHandler(this.cmbDatabaseList_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 81);
+            this.label4.Location = new System.Drawing.Point(8, 100);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Database:";
             // 
             // btnTestConn
             // 
-            this.btnTestConn.Location = new System.Drawing.Point(541, 17);
+            this.btnTestConn.Location = new System.Drawing.Point(721, 23);
+            this.btnTestConn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTestConn.Name = "btnTestConn";
-            this.btnTestConn.Size = new System.Drawing.Size(98, 52);
+            this.btnTestConn.Size = new System.Drawing.Size(131, 61);
             this.btnTestConn.TabIndex = 6;
             this.btnTestConn.Text = "Test Connection";
             this.btnTestConn.UseVisualStyleBackColor = true;
@@ -120,9 +129,12 @@
             // cbWindowsAuth
             // 
             this.cbWindowsAuth.AutoSize = true;
-            this.cbWindowsAuth.Location = new System.Drawing.Point(343, 51);
+            this.cbWindowsAuth.Checked = true;
+            this.cbWindowsAuth.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbWindowsAuth.Location = new System.Drawing.Point(457, 63);
+            this.cbWindowsAuth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbWindowsAuth.Name = "cbWindowsAuth";
-            this.cbWindowsAuth.Size = new System.Drawing.Size(163, 17);
+            this.cbWindowsAuth.Size = new System.Drawing.Size(209, 21);
             this.cbWindowsAuth.TabIndex = 5;
             this.cbWindowsAuth.Text = "Use Windows Authentication";
             this.cbWindowsAuth.UseVisualStyleBackColor = true;
@@ -131,27 +143,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(172, 52);
+            this.label3.Location = new System.Drawing.Point(229, 64);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Password:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 52);
+            this.label2.Location = new System.Drawing.Point(9, 64);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Username:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 23);
+            this.label1.Location = new System.Drawing.Point(9, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Server:";
             // 
@@ -160,35 +175,39 @@
             this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResult.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResult.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtResult.Location = new System.Drawing.Point(12, 212);
+            this.txtResult.Location = new System.Drawing.Point(16, 342);
+            this.txtResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(646, 263);
+            this.txtResult.Size = new System.Drawing.Size(861, 400);
             this.txtResult.TabIndex = 4;
             this.txtResult.Text = "";
             // 
             // txtSQL
             // 
-            this.txtSQL.Location = new System.Drawing.Point(13, 156);
+            this.txtSQL.Location = new System.Drawing.Point(17, 192);
+            this.txtSQL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSQL.Multiline = true;
             this.txtSQL.Name = "txtSQL";
-            this.txtSQL.Size = new System.Drawing.Size(535, 50);
+            this.txtSQL.Size = new System.Drawing.Size(712, 142);
             this.txtSQL.TabIndex = 5;
             this.txtSQL.Text = "SELECT 1";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 140);
+            this.label5.Location = new System.Drawing.Point(16, 172);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.Size = new System.Drawing.Size(83, 17);
             this.label5.TabIndex = 6;
             this.label5.Text = "SQL Query:";
             // 
             // btnGetJSON
             // 
-            this.btnGetJSON.Location = new System.Drawing.Point(555, 156);
+            this.btnGetJSON.Location = new System.Drawing.Point(740, 192);
+            this.btnGetJSON.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGetJSON.Name = "btnGetJSON";
-            this.btnGetJSON.Size = new System.Drawing.Size(103, 50);
+            this.btnGetJSON.Size = new System.Drawing.Size(137, 142);
             this.btnGetJSON.TabIndex = 7;
             this.btnGetJSON.Text = "Get JSON";
             this.btnGetJSON.UseVisualStyleBackColor = true;
@@ -196,30 +215,20 @@
             // 
             // btnCopy
             // 
-            this.btnCopy.Location = new System.Drawing.Point(12, 485);
+            this.btnCopy.Location = new System.Drawing.Point(777, 750);
+            this.btnCopy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(75, 25);
+            this.btnCopy.Size = new System.Drawing.Size(100, 31);
             this.btnCopy.TabIndex = 8;
             this.btnCopy.Text = "Copy";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
-            // lblEdiWang
-            // 
-            this.lblEdiWang.AutoSize = true;
-            this.lblEdiWang.Location = new System.Drawing.Point(584, 491);
-            this.lblEdiWang.Name = "lblEdiWang";
-            this.lblEdiWang.Size = new System.Drawing.Size(68, 13);
-            this.lblEdiWang.TabIndex = 9;
-            this.lblEdiWang.Text = "by Edi.Wang";
-            this.lblEdiWang.Click += new System.EventHandler(this.lblEdiWang_Click);
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 523);
-            this.Controls.Add(this.lblEdiWang);
+            this.ClientSize = new System.Drawing.Size(895, 794);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnGetJSON);
             this.Controls.Add(this.label5);
@@ -227,6 +236,7 @@
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "SQL2JSON - Convert SQL Query Result to JSON string";
@@ -254,7 +264,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnGetJSON;
         private System.Windows.Forms.Button btnCopy;
-        private System.Windows.Forms.Label lblEdiWang;
         private System.Windows.Forms.ComboBox cmbDatabaseList;
     }
 }
